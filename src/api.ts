@@ -1,7 +1,8 @@
 import axios from 'axios';
 import type { User, Route, Booking, AuthResponse } from './apiTypes';
 
-export const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+// export const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+export const API_BASE = 'https://safeway-backend-71a1.onrender.com/api'// 'http://localhost:5000/api';
 
 export async function login(email: string, password: string): Promise<AuthResponse> {
   const res = await axios.post(`${API_BASE}/auth/login`, { email, password });
