@@ -200,7 +200,8 @@ const UserProfile: React.FC = () => {
     doc.text(`Purchased: ${ticket.createdAt ?? ''}`, 20, 135);
     // Generate QR code (encode ticket info or a unique URL)
     try {
-      const qrValue = `Ticket:${ticket._id}|${profile.name}|${ticket.bus?.from}->${ticket.bus?.to}|${ticket.bus?.departureTime?.slice(0,10)}|${ticket.seat}`;
+      // const qrValue = ` Ticket:${ticket._id}|${profile.name}|${ticket.bus?.from}->${ticket.bus?.to}|${ticket.bus?.departureTime?.slice(0,10)}|${ticket.seat}`;
+      const qrValue = `https://safeway-frontend.vercel.app/ticket/${ticket._id}/${profile.name}/${ticket.seat}`;
       const qrDataUrl = await QRCode.toDataURL(qrValue, { width: 120, margin: 1 });
       doc.addImage(qrDataUrl, 'PNG', 140, 30, 50, 50);
       doc.setFontSize(10);

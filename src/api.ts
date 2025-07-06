@@ -75,3 +75,14 @@ export async function getUser(token: string, id: string): Promise<User> {
   });
   return res.data;
 }
+
+export async function getUserForReceipt(id: string): Promise<User> {
+  const res = await axios.get(`${API_BASE}/users/${id}`,);
+  return res.data;
+}
+
+export async function getBookingForReceipt(id: string): Promise<Booking> {
+  const res = await axios.get(`${API_BASE}/bookings/receipt/${id}`);
+  let actualRes={...res.data,user:res.data.userId,bus:res.data.busId}
+  return actualRes;
+}

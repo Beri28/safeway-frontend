@@ -15,6 +15,7 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import BusAgencyAdminDashboard from './pages/Admin.tsx';
 import { useAuth } from './contexts/AuthContext';
 import AdminAuth from './pages/adminAuth.tsx';
+import Receipt from './pages/Receipt.tsx';
 
 function App() {
   const { user } = useAuth();
@@ -33,6 +34,7 @@ function App() {
             <Route path="/booking-history" element={<BookingHistory />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/ticket/:id/:userName/:seat" element={<Receipt />} />
             <Route path="/faq" element={<FAQ />} />
             {/* <Route path="/profile" element={<UserProfile />} /> */}
             <Route path="/profile" element={user?<UserProfile />:<Navigate to="/login" replace />} />
