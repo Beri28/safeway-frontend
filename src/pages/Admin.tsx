@@ -27,6 +27,7 @@ import { Route as BusRoute } from '../apiTypes';
 import CircularProgress from '@mui/material/CircularProgress';
 import { useAuth } from '../contexts/AuthContext';
 import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const BusAgencyAdminDashboard = () => {
   const { user, token,logout } = useAuth();
@@ -35,6 +36,7 @@ const BusAgencyAdminDashboard = () => {
   const [showEditTrip, setShowEditTrip] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [selectedTrip, setSelectedTrip] = useState<any>({});
+  const navigate = useNavigate();
   // const [agencyInfo, setAgencyInfo] = useState({
   //   name: 'Guarantee Express',
   //   logo: '🚌',
@@ -681,7 +683,10 @@ const BusAgencyAdminDashboard = () => {
             </div>
           )}
         </div>
-        <Button variant="outlined" color="error" size="small" sx={{ fontWeight: 700, borderRadius: 2,my:3 }} onClick={logout}>Logout</Button>
+        <Button variant="outlined" color="error" size="small" sx={{ fontWeight: 700, borderRadius: 2,my:3 }} onClick={()=>{
+          logout()
+          navigate('/')
+        }}>Logout</Button>
       </div>
       {showAddTrip && 
         <div className="fixed inset-0 bg-[#00000080] bg-opacity-50 flex items-center justify-center p-4 z-50">
