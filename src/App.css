@@ -1,0 +1,13 @@
+@import "tailwindcss";
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f5; /* A light grey background */
+}
+
+.language-switcher-fixed {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+}
