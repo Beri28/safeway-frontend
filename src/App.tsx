@@ -37,7 +37,7 @@ function App() {
             {/* <Route path="/profile" element={<UserProfile />} /> */}
             <Route path="/profile" element={user?<UserProfile />:<Navigate to="/login" replace />} />
             {/* <Route path="/admin" element={user?.role==='admin'? <BusAgencyAdminDashboard />:<Navigate to="/login" replace />} /> */}
-            <Route path="/admin" element={<BusAgencyAdminDashboard />} />
+            <Route path="/admin" element={user?.role==='admin'?<BusAgencyAdminDashboard />:<Navigate to="/admin_login" replace />} />
           </Routes>
         </BrowserRouter>
       {/* </BookingHistoryProvider> */}
