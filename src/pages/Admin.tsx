@@ -26,9 +26,10 @@ import { API_BASE, deleteBus, getBuses } from '../api';
 import { Route as BusRoute } from '../apiTypes';
 import CircularProgress from '@mui/material/CircularProgress';
 import { useAuth } from '../contexts/AuthContext';
+import { Button } from '@mui/material';
 
 const BusAgencyAdminDashboard = () => {
-  const { user, token } = useAuth();
+  const { user, token,logout } = useAuth();
   const [trips, setTrips] = useState<BusRoute[]>([]);
   const [showAddTrip, setShowAddTrip] = useState(false);
   const [showEditTrip, setShowEditTrip] = useState(false);
@@ -681,7 +682,7 @@ const BusAgencyAdminDashboard = () => {
           )}
         </div>
       </div>
-
+      <Button variant="outlined" color="error" size="small" sx={{ fontWeight: 700, borderRadius: 2 }} onClick={logout}>Logout</Button>
       {showAddTrip && 
         <div className="fixed inset-0 bg-[#00000080] bg-opacity-50 flex items-center justify-center p-4 z-50">
         <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
