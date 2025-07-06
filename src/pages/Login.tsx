@@ -138,9 +138,9 @@ const Login: React.FC = () => {
           <div className="text-center mt-6">
             <Link to="/register" className="text-[#00796B] hover:underline font-medium">Don't have an account? Sign up</Link>
           </div>
-          <div className="text-center mt-6">
+          {/* <div className="text-center mt-6">
             <Link to="/admin_login" className="text-slate-200 hover:underline font-medium">Admin</Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
