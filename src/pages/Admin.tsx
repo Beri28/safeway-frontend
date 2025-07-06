@@ -563,7 +563,7 @@ const BusAgencyAdminDashboard = () => {
         </div>
 
         {/* Trips Management */}
-        <div className="bg-white rounded-lg shadow-sm">
+        <div className="bg-white rounded-lg shadow-sm mb-4">
           <div className="md:p-6 p-6 px-4 border-b">
             <div className="flex flex-wrap justify-between items-center">
               <h2 className="text-xl font-semibold">Route Management</h2>
@@ -681,8 +681,8 @@ const BusAgencyAdminDashboard = () => {
             </div>
           )}
         </div>
+        <Button variant="outlined" color="error" size="small" sx={{ fontWeight: 700, borderRadius: 2,my:3 }} onClick={logout}>Logout</Button>
       </div>
-      <Button variant="outlined" color="error" size="small" sx={{ fontWeight: 700, borderRadius: 2 }} onClick={logout}>Logout</Button>
       {showAddTrip && 
         <div className="fixed inset-0 bg-[#00000080] bg-opacity-50 flex items-center justify-center p-4 z-50">
         <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
